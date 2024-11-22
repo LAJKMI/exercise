@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Light Effect</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+  
+    }
+
+    #light {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    #center-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      background-color: black;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+     
+    }
+
+    
+
+    
+  </style>
+</head>
+<body>
+  <div id="center-div">
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+    <div class="date"></div>
+  </div>
+  <div id="light"></div>
+  
+  <script>
+    document.addEventListener('mousemove', function (e) {
+      const light = document.getElementById('light');
+      
+      // Update the light position to follow the mouse
+      light.style.left = `${e.clientX}px`;
+      light.style.top = `${e.clientY}px`;
+
+
+    });
+  </script>
+</body>
+</html>
